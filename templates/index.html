@@ -1,0 +1,33 @@
+{% extends 'base.html' %}
+
+{% block title %}
+Головна сторінка
+{% endblock %}
+
+{% block body %}
+<div class="container mt-5">
+    <div class="container">
+         <div class="row">
+            <div class="col-md-8" id="content">
+                <img src="/static/index.jpg" class="img-fluid bd-placeholder-img card-img-top" focusable="false" alt="">
+            </div>
+
+            <div class="col-6 col-md-4 box" id="parent">
+                <div id="child" style="text-align: center">
+
+                    <h2><strong>"Світосприйняття"</strong></h2><br>
+                    <h5>Колекція картин виконаних стрічками</h5>
+                    <br>
+                    <a href="/catalog" class="btn btn-dark" >Перейти в каталог</a>
+
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+
+
+{% endblock %}

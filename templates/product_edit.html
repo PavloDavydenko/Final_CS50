@@ -1,0 +1,33 @@
+{% extends 'base_admin.html' %}
+
+{% block title %}
+Редагування даних товару
+{% endblock %}
+
+{% block body %}
+<div class="container mt-5">
+    <h1>Редагування даних товару</h1>
+    <form method="post" enctype=multipart/form-data>
+        <label class="form-label">Назва товару</label>
+        <input type="text" name="product_name" id="product_name" value="{{ product.product_name }}" class="form-control" autocomplete="off" autofocus><br>
+
+        <label class="form-label">Артикул товару</label>
+        <input type="text" name="article" id="article" value="{{ product.article }}" class="form-control" autocomplete="off" autofocus><br>
+
+        <label class="form-label">Ціна товару</label>
+        <input type="text" name="price" id="price" value="{{ product.price }}" class="form-control" autocomplete="off" autofocus><br>
+
+        <label class="form-label">Короткий опис товару</label>
+        <input type="text" name="short_text" id="short_text" value="{{ product.short_text }}" class="form-control" autocomplete="off" autofocus><br>
+
+        <label class="form-label">Повний опис товару</label>
+        <textarea name="text" id="text" class="form-control" autocomplete="off" autofocus>{{ product.text }}</textarea><br>
+
+<!--        <label class="form-label">Вибір ілюстрації</label>-->
+<!--        <input class="form-control" type="file" name="file" id="file"><br>-->
+
+        <input type="submit" class="btn btn-success" value="Оновити">
+
+    </form>
+</div>
+{% endblock %}

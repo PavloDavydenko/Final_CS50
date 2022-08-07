@@ -1,0 +1,34 @@
+{% extends 'base.html' %}
+
+{% block title %}
+Каталог
+{% endblock %}
+
+{% block body %}
+<div class="container mt-5">
+    <h3 class="text-center">Каталог</h3><br>
+    <div class="container">
+      <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-3">
+        {% if products|length > 0 %}
+          {% for el in products %}
+            <div class="col">
+              <div>
+                <a href="/catalog/{{ el.id }}" class="catalog-link">
+                  <img src="/static/{{ el.img }}" class="img-fluid bd-placeholder-img card-img-top" width="100%" height="225"  preserveAspectRatio="xMidYMid slice" focusable="false" alt="{{ el.product_name }}">
+                  <div class="card-body">
+                    <br>
+                    <h5 class="text-center">{{ el.product_name }}</h5>
+                    <h4 class="text-center my-0 fw-normal"><strong>{{ el.price }} грн</strong></h4><br>
+                  </div>
+                </a>
+              </div>
+            </div>
+          {% endfor %}
+        {% else %}
+        <p>Каталог товарів не заповнено!</p>
+        {% endif %}
+      </div>
+    </div>
+
+</div>
+{% endblock %}

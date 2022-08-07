@@ -1,0 +1,22 @@
+{% extends 'base_admin.html' %}
+
+{% block title %}
+Додавання товару
+{% endblock %}
+
+{% block body %}
+<div class="container mt-5">
+    <h1>Додавання товару</h1>
+    <form method=post enctype=multipart/form-data>
+        <input type="text" name="product_name" id="product_name" placeholder="Назва товару" class="form-control" autocomplete="off" autofocus><br>
+        <input type="text" name="article" id="article" pattern="[0-9]{5}" size="4" placeholder="Артикул (5 цифр)" class="form-control" autocomplete="off" autofocus><br>
+        <input type="text" name="price" id="price" step="0.01" min="0" placeholder="Ціна товару" class="form-control" autocomplete="off" autofocus><br>
+        <input type="text" name="short_text" id="short_text" placeholder="Короткий опис" class="form-control" autocomplete="off" autofocus><br>
+        <textarea name="text" id="text" class="form-control" autocomplete="off" autofocus>Опис товару</textarea><br>
+        <input class="form-control" type="file" name="file" id="file">
+        <br>
+        <input type="submit" class="btn btn-success" value="Додати">
+
+    </form>
+</div>
+{% endblock %}

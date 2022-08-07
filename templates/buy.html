@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+  </head>
+  <body>
+    <form name="tocheckout" method="POST" action="https://pay.fondy.eu/api/checkout/redirect/">
+      <input type="text" name="server_callback_url" value="https://site.com/callback/">
+      <input type="text" name="response_url" value="https://site.com/responsepage/">
+      <input type="text" name="order_id" value="test4207135583">
+      <input type="text" name="order_desc" value="Test payment">
+      <input type="text" name="currency" value="UAH">
+      <input type="text" name="amount" value="100">
+      <input type="text" name="signature" value="1773cf135bd89656131134b98637894dad42f808">
+      <input type="text" name="merchant_id" value="1">
+      <input type="submit">
+    </form>
+  </body>
+</html>

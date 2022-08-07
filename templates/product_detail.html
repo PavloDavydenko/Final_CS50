@@ -1,0 +1,70 @@
+{% extends 'base.html' %}
+
+{% block title %}
+{{ product.product_name }}
+{% endblock %}
+
+{% block body %}
+<script src="https://pay.fondy.eu/static_common/v1/checkout/ipsp.js"></script>
+<script>
+	var button = $ipsp.get('button');
+	button.setMerchantId(1396424);
+	button.setAmount('{{ product.price }}', 'UAH', true);
+	button.setResponseUrl('http://example.com/result/');
+	button.setHost('pay.fondy.eu');
+	button.addField({
+		label: 'ФИО',
+		name: 'fio',
+		required: true
+	});
+	button.addField({
+		label: 'Описание платежа',
+		name: 'description',
+		value: 'Оплата за товар',
+		readonly: true
+	});
+</script>
+<div class="container mt-5">
+    <div class="container">
+         <div class="row">
+            <div class="col-md-7" id="content">
+                <a href="/static/{{ product.img }}" target="_blank">
+                <img src="/static/{{ product.img }}" class="img-det img-fluid bd-placeholder-img card-img-top" focusable="false" alt="">
+                </a>
+            </div>
+
+            <div class="col-6 col-md-5 box" >
+                <div>
+                    <div>
+                        <a href="/catalog" class="catalog-link">Перейти до каталогу</a>
+                    </div>
+                    <br>
+                    <div>
+                        <h2>{{ product.product_name }}</h2>
+                    </div>
+                    <br>
+
+
+                    <div>
+                        <p>Артикул: {{ product.article }}</p>
+                        <br>
+                        <p><h4><strong>{{ product.price }} грн</strong></h4></p>
+                        <br>
+                        <p><strong>{{ sklad }}</strong></p>
+                    </div>
+                    <div class="d-grid gap-2 col-6">
+                        <button class="btn btn-dark" onclick="location.href=button.getUrl()">Купити</button>
+<!--                        <a href="/buy/{{ product.id }}" class="btn btn-dark">Купити</a>-->
+                    </div>
+                    <br>
+                    <div>
+                        <h5>Опис:</h5>
+                        <p>{{ product.text }}</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+{% endblock %}
