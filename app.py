@@ -67,7 +67,6 @@ def catalog_detail(id):
 @app.route('/buy/<int:id>')
 def buy(id):
     product = Catalog.query.get(id)
-
     return render_template("buy.html", product=product)
 
 
@@ -142,6 +141,7 @@ def add():
             return "При додаванні товару виникла помилка"
     else:
         return render_template("add.html")
+
 
 # Delete product
 @app.route('/admin/<int:id>/del')
